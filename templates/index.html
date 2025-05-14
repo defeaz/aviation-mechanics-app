@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Aviation Mechanics</title>
+</head>
+<body>
+    <h1>Aviation Mechanics Finder</h1>
+    <form method="get">
+        <input type="text" name="location" placeholder="Enter city or postcode">
+        <button type="submit">Search</button>
+    </form>
+
+    <a href="/register">Register as a Mechanic</a>
+
+    <ul>
+        {% for m in mechanics %}
+            <li>
+                <a href="/mechanic/{{ m.id }}">{{ m.name }}</a> – {{ m.location }}
+                <p>{{ m.services }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
