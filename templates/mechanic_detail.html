@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head><title>{{ mechanic.name }}</title></head>
+<head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title>{{ mechanic.name }}</title></head>
 <body>
     <h2>{{ mechanic.name }}</h2>
     <p><strong>Location:</strong> {{ mechanic.location }}</p>
