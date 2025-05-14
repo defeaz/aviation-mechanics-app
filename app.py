@@ -38,3 +38,20 @@ def register():
 def mechanic_detail(mechanic_id):
     mechanic = Mechanic.query.get_or_404(mechanic_id)
     return render_template('mechanic_detail.html', mechanic=mechanic)
+
+@app.route('/mechanic/<int:mechanic_id>/review', methods=['POST'])
+def submit_review(mechanic_id):
+    reviewer_name = request.form['reviewer_name']
+    rating = float(request.form['rating'])
+    comment = request.form['comment']
+
+    new_review = Review(
+        mechanic_id=mechanic_id,
+        reviewer_name=reviewer_name,
+        rating=rating,
+        comment=comment
+    )
+    db.session.add(new_review)
+    db.session.commit()
+
+    return redirect(url_for('mechanic_detail', mechanic_id=mechanic_id))
