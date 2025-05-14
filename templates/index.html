@@ -25,6 +25,12 @@
                 <p>{{ m.services }}</p>
             </li>
         {% endfor %}
+        
+ <a href="{{ url_for('mechanic_detail', mechanic_id=mechanic.id) }}">
+     
+    <h3>{{ mechanic.name }}</h3>
+</a>
+       
     </ul>
 </body>
 </html>
