@@ -7,4 +7,7 @@ class Mechanic(db.Model):
     name = db.Column(db.String(100))
     location = db.Column(db.String(100))
     services = db.Column(db.Text)
-    contact = db.Column(db.String(100))
+    qualifications = db.Column(db.Text)
+    photo_url = db.Column(db.String(200))  # Link to an image
+    bio = db.Column(db.Text)  # Personal statement
+
